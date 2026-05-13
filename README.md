@@ -1,0 +1,2 @@
+# 38-SOPKATHON-SERVER-ANDROID3
+38기 솝커톤 안드로이드 3팀 서버 레포
