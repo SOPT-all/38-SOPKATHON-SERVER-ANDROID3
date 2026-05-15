@@ -27,7 +27,7 @@ jobs:
       - name: Prepare artifacts
         run: |
           mkdir -p deploy
-          cp build/libs/sopkathon-0.0.1-SNAPSHOT.jar deploy/sopkathon.jar
+          cp build/libs/sopkathon.jar deploy/sopkathon.jar
           cp scripts/deploy.sh deploy/deploy.sh
 
       - name: SCP JAR to EC2
