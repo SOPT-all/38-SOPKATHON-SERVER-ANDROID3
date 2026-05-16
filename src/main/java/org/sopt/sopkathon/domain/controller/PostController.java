@@ -5,13 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.sopt.sopkathon.domain.code.PostSuccessCode;
 import org.sopt.sopkathon.domain.dto.request.PostCreateRequest;
 import org.sopt.sopkathon.domain.dto.response.PostCreateResponse;
+import org.sopt.sopkathon.domain.dto.response.PostGetResponse;
 import org.sopt.sopkathon.domain.service.PostService;
 import org.sopt.sopkathon.global.response.BaseResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,6 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
     private final PostService postService;
+
+    @GetMapping
+    public ResponseEntity<BaseResponse<PostGetResponse>> getPosts() {
+        PostGetResponse response = postService.getPosts();
+        return ResponseEntity.ok(BaseResponse.success(PostSuccessCode.GET_POSTS, response));
+    }
 
     @PostMapping
     public ResponseEntity<BaseResponse<PostCreateResponse>> createPost(
