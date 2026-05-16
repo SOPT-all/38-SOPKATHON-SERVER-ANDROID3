@@ -9,7 +9,8 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum PostSuccessCode implements SuccessCode {
 
-    CREATE_POST(HttpStatus.CREATED, "POST_201", "고민 작성에 성공했습니다.");
+    CREATE_POST(HttpStatus.CREATED, "POST_201", "고민 작성에 성공했습니다."),
+    GET_POSTS(HttpStatus.OK, "POST_200", "카드 조회에 성공했습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;
